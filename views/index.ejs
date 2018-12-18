@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+	<% include layout.ejs %>
+</head>
+<body>
+
+<div class="grid-example col s12 m6">
+    <div class="row align-items-center">
+		<div class="container" style='display:inline; width:85%; float:center;'>
+<%for(var i in info){%>
+<div onclick="location.href='information/<%=info[i]._id%>'" style='cursor:pointer; width:40%; float:left; height:40%; margin:10px'>
+	<center><img src=<%= info[i].ImagePath %> style='max-width:80%; max-height:50%;'></center>
+	<p align="center"><%=info[i].tag%></p>
+	<p align="center"><%=info[i].title%></p>
+	<p align="center"><%=info[i].price%></p>
+</div>
+<%}%>
+</div>
+    </div>
+</div>
+</body>
+</html>

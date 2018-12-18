@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<head>
+  <% include layout.ejs %>
+</head>
+<body>
+  <div class="alert alert-scarlet" role="alert">
+  공지사항을 확인하세요!
+</div>
+<div class="navbar navbar-success" role="alert">
+ <p class="text-muted">전자제품</p>
+</div>
+
+<div class="cate">
+<div class="row">
+    <div class="col s12" id="cate_button">
+      <button type="button" class="btn btn-default"><a href="/book"><p class="text-muted">전공/교양서적</p></a></button>
+    </div>
+    <div class="col s12 m4 l2" id="cate_button">
+      <button type="button" class="btn btn-default"><a href="/variety"><p class="text-muted">전공/교양잡화</p></a></button>
+    </div>
+    <div class="col s12 m4 l8" id="cate_button">
+      <button type="button" class="btn btn-default"><a href="/household"><p class="text-muted">생활용품</p></a></button>
+    </div>
+    <!-- <div class="col s12 m4 l2"><p>s12 m4</p></div> -->
+  </div>
+  <div class="row">
+    <div class="col s12 m6 l3" id="cate_button">
+      <button type="button" class="btn btn-lg btn-primary" disabled="disabled">전자제품</button>
+    </div>
+    <div class="col s12 m6 l3" id="cate_button">
+      <button type="button" class="btn btn-default"><a href="/clothes"><p class="text-muted">의류</p></a></button>
+    </div>
+    <div class="col s12 m6 l3" id="cate_button">
+      <button type="button" class="btn btn-default"><a href="/hobby"><p class="text-muted">취미/오락</p></a></button>
+    </div>
+    <div class="col s12 m6 l3" id="cate_button">
+      <button type="button" class="btn btn-default"><a href="/etc"><p class="text-muted">기타</p></a></button>
+    </div>
+  </div>
+  </div>
+
+	<div class="grid-example col s12 m6">
+	    <div class="row align-items-center">
+			<div class="container" style='display:inline; width:85%; float:center;'>
+	<%for(var i in info){%>
+	<div onclick="location.href='information/<%=info[i]._id%>'" style='cursor:pointer; width:40%; float:left; height:40%; margin:10px'>
+		<center><img src=../<%= info[i].ImagePath %> style='max-width:80%; max-height:50%;'></center>
+		<p align="center"><%=info[i].tag%></p>
+		<p align="center"><%=info[i].title%></p>
+		<p align="center"><%=info[i].price%></p>
+	</div>
+	<%}%>
+	</div>
+	    </div>
+	</div>
+
+<nav>
+  <ul class="pagination">
+    <li>
+      <a href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li>
+      <a href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+</body>
+</html>
